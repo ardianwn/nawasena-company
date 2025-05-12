@@ -1,0 +1,385 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Lora:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lora', serif;
+    color: #fff;
+    background-color: #f8f8f8;
+}
+
+/* Styling Navbar */
+/* Styling Navbar */
+.navbar {
+    padding-left: 80px;
+    padding-right: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ab9f90; /* Semi-transparent */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect untuk menu navbar */
+.nav-link:hover {
+    opacity: 0.8;
+    color: #EED3B1 !important;
+}
+
+/* Animasi untuk masuk ke navbar */
+.navbar.scrolled {
+    background-color: #ab9f90 !important;
+}
+
+/* Styling untuk dropdown menu */
+.nav-item.dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  /* Menghapus background-image bawaan dan menggantinya dengan warna custom */
+  .navbar-toggler-icon {
+    background-image: none !important;
+    background-color: none !important; /* Ganti dengan warna yang Anda inginkan */
+    border-radius: 4px; /* Opsional: untuk sudut yang agak melengkung */
+    width: 24px;  /* Opsional: atur lebar toggler */
+    height: 24px; /* Opsional: atur tinggi toggler */
+  }
+  
+  /* Mengatur ikon garis-garis hamburger (opsional).
+     Ini memunculkan 'hamburger lines' di atas background color */
+  .navbar-toggler {
+    border: none; /* menghapus border default */
+  }
+  
+  .navbar-toggler-icon::after {
+    content: "";
+    display: block;
+    width: 16px;  
+    height: 2px;
+    background-color: #E8ECD7; /* Warna strip toggler, misal hijau */
+    position: relative;
+    left: 4px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 6px 0 0 #E8ECD7, 0 12px 0 0 #E8ECD7; 
+    /* membuat 3 garis: satu di atas, satu di tengah, satu di bawah */
+  }
+
+.navbar-toggler-icon::before {
+    top: -5px;
+}
+
+.navbar-toggler-icon::after {
+    top: 5px;
+}
+
+
+/* Styling untuk dropdown item */
+.dropdown-menu {
+    text-align: center; /* Menjaga teks berada di tengah */
+}
+
+.dropdown-item:hover {
+    background-color: #EED3B1;
+    color: #ab9f90;
+}
+
+.nav-hover {
+    transition: color 0.3s ease;  /* Membuat transisi saat hover */
+}
+
+.nav-hover:hover {
+    color: #EED3B1 !important;  /* Ganti dengan warna yang diinginkan */
+    cursor: pointer;  /* Menambahkan kursor pointer untuk efek hover */
+}
+
+
+
+.bold-text {
+    font-weight: bold;
+}
+/* Hero Section */
+/* Styling untuk gambar logo di Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Mengatur arah konten menjadi kolom */
+    align-items: center; /* Menjaga gambar dan teks di tengah horizontal */
+    justify-content: center; /* Menjaga gambar dan teks di tengah vertikal */
+    text-align: center; /* Membuat teks di dalam Hero Section juga berada di tengah */
+}
+
+.hero-logo {
+    width: 150%; /* Mengatur gambar untuk menyesuaikan lebar kontainer */
+    max-width: 500px; /* Batasan lebar maksimal gambar logo */
+    height: auto; /* Menjaga proporsi gambar */
+    object-fit: contain; /* Agar gambar tetap proporsional */
+    margin-bottom: 30px; /* Jarak dari teks */
+    animation: fadeInUp 1.5s ease-in-out;
+    position: relative;
+    bottom: 60px;
+}
+
+
+.hero-slogan {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: #fff;
+    animation: fadeInUp 2s ease-in-out;
+    position: relative;
+    top: 100px;
+}
+
+.hero-button {
+    font-size: 16px;
+    background-color: #ab9f90;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    animation: fadeInUp 2.5s ease-in-out;
+    position: relative;
+    bottom: 30px;
+}
+
+.hero-button:hover {
+    background-color: #a49684;
+}
+
+/* Animasi Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔹 Tata Letak Produk (Responsif) */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 produk di desktop, 2 di tablet, 1 di HP */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* 🔹 Card Produk */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: white;
+}
+
+.product-card img {
+    width: 100%;
+    height: 310px; /* Biarkan proporsional */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Teks dalam Kartu Produk */
+.product-title {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #413528;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.product-latin {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    color: #625241;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Grid Layout untuk Galeri */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Styling Gambar */
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efek Hover */
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek animasi scroll yang terus berjalan */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s ease-in-out;
+}
+
+.fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Styling */
+.btn-custom {
+    background-color: #47663B;
+    color: #EED3B1;
+    border-radius: 20px;
+    padding: 12px 24px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background-color: #355029;
+}
+
+/* Contact Form */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #47663B;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #1F4529;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column; /* Mengatur arah konten menjadi kolom */
+        align-items: center; /* Menjaga gambar dan teks di tengah horizontal */
+        justify-content: center; /* Menjaga gambar dan teks di tengah vertikal */
+        text-align: center; /* Membuat teks di dalam Hero Section juga berada di tengah */
+    }
+    
+    .hero-logo {
+        width: 100%; /* Mengatur gambar untuk menyesuaikan lebar kontainer */
+        max-width: 500px; /* Batasan lebar maksimal gambar logo, sesuaikan lebih besar */
+        height: auto; /* Menjaga proporsi gambar */
+        object-fit: contain; /* Agar gambar tetap proporsional */
+        margin-bottom: 30px; /* Jarak dari teks */
+        animation: fadeInUp 1.5s ease-in-out;
+        position: relative;
+        bottom: 80px; /* Menurunkan gambar sedikit agar lebih pas */
+    }
+    
+    .hero-slogan {
+        font-family: 'Great Vibes', cursive;
+        font-size: 40px; /* Membesarkan ukuran font */
+        color: #fff;
+        animation: fadeInUp 2s ease-in-out;
+        position: relative;
+        top: 225px; /* Menurunkan sedikit posisi teks agar lebih pas dengan gambar */
+    }
+    
+    .hero-button {
+        font-size: 18px; /* Membesarkan ukuran font tombol */
+        background-color: #ab9f90;
+        color: #fff;
+        padding: 10px 20px; /* Menambah padding untuk tombol */
+        border-radius: 30px;
+        transition: all 0.3s ease-in-out;
+        animation: fadeInUp 2.5s ease-in-out;
+        position: relative;
+        bottom: 60px; /* Menurunkan tombol sedikit */
+    }
+    
+    .product-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 produk per baris di tablet */
+    }
+    .text-justify {
+        text-align: justify; /* Membuat teks rata kiri-kanan */
+    }
+    
+    
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        display: flex;
+        flex-direction: column; /* Mengatur arah konten menjadi kolom */
+        align-items: center; /* Menjaga gambar dan teks di tengah horizontal */
+        justify-content: center; /* Menjaga gambar dan teks di tengah vertikal */
+        text-align: center; /* Membuat teks di dalam Hero Section juga berada di tengah */
+    }
+    
+    .hero-logo {
+        width: 100%; /* Mengatur gambar untuk menyesuaikan lebar kontainer */
+        max-width: 350px; /* Batasan lebar maksimal gambar logo */
+        height: auto; /* Menjaga proporsi gambar */
+        object-fit: contain; /* Agar gambar tetap proporsional */
+        margin-bottom: 30px; /* Jarak dari teks */
+        animation: fadeInUp 1.5s ease-in-out;
+        position: relative;
+        bottom: 60px;
+    }
+    
+    
+    .hero-slogan {
+        font-family: 'Great Vibes', cursive;
+        font-size: 30px;
+        color: #fff;
+        animation: fadeInUp 2s ease-in-out;
+        position: relative;
+        top: 150px;
+    }
+    
+    .hero-button {
+        font-size: 16px;
+        background-color: #ab9f90;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 30px;
+        transition: all 0.3s ease-in-out;
+        animation: fadeInUp 2.5s ease-in-out;
+        position: relative;
+        bottom: 50px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Pada layar kecil, hanya 2 kolom */
+    }
+    .product-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 produk per baris di HP */
+    }
+}
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr); /* Pada layar sangat kecil, hanya 1 kolom */
+    }
+}
